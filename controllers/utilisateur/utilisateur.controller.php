@@ -63,6 +63,7 @@ function validation_creerCompte($login, $password, $mail)
         if (bdCreerCompte($login, $passwordCrypte, $mail, $cle, "profils/profils_site/profil_init.jpg",$img_site,  "utilisateur")) {
             sendMailValidation($login, $mail, $cle);
             ajouterMessageAlerte("Votre compte a été créer. <br> Merci de la valider via le lien envoyé sur votre adresse mail.", "vert");
+            bdCreerTableToDo($login);
             header('location:' . URL . "accueil");
         } else {
             ajouterMessageAlerte("Echec de la création de votre compte.<br> Merci de recommencer.", "rouge");

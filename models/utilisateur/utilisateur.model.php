@@ -143,3 +143,21 @@ function bdSuppCompte($login)
     $stmt->closeCursor();
     return $suppressionOk;
 }
+
+function bdCreerTableToDo($login){
+    $tableName = "TodoTable__".$login;
+    $req="
+    CREATE TABLE $tableName (    
+    id INT(11) AUTO_INCREMENT PRIMARY KEY,
+    à_faire VARCHAR(255) NOT NULL,
+    fait int(255) NOT NULL,
+    type VARCHAR(255) NOT NULL
+    )";
+    $stmt = getBDD()->prepare($req);
+    $stmt->execute();
+    $creationOK = ($stmt->rowCount() > 0);
+    $stmt->closeCursor();
+    return $creationOK;
+
+
+}
