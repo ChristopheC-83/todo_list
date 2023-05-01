@@ -1,6 +1,8 @@
 @import "libs/variables";
 @import "libs/reset";
 @import "libs/mixins";
+@import "libs/placeholders";
+@import "libs/formulaires";
 @import "communs/header_menu";
 @import "communs/footer";
 @import "communs/titres";
@@ -8,6 +10,8 @@
 @import "pages/login";
 @import "pages/profil";
 @import "pages/droits";
+
+
 
 body {
   background-color: #333;
@@ -17,4 +21,5 @@ body {
   position: relative;
   max-width: 1920px;
   margin: 0 auto;
+  border-top: 1px solid #000;
 }

@@ -1,40 +1,28 @@
 <div class="animTitres <?= $css ?>">
+    
+    <?php if (!estConnecte()) :  ?>
+        <h2>Je m'enregistre si ce n'est pas déjà fait => logo enregistrement</h2>
+        <h2>Je me connecte => logo connexion</h2>
+        <h2>J'organise la liste des choses à faire ! => explosion smiley</h2>
 
-    <h1>Titre Site / Accueil</h1>
-    <h2>Accueil Contiendra</h2>
+    <?php else : ?>
+        
+        <table>
+            <tr>
+            <?php foreach ($typeFromToDoList as $type) : ?>
+                <th><?php echo $type['type'] ?></th>
+                <?php endforeach ?>
 
-    <pre style="font-size:16px">
-    Base de site :
 
-    Structure MVC
-    Paradigme procédural
-    Base données utilisateurs jointe
-    CSS géré par SASS
-    Cookie de connexion paramétré sur 20 minutes de viabilité
-
-    gestion 
-
-        enregistrement
-            connexion avec validation par lien mail
-            gestion "mot de passe oublié"
-
-        pour utilisateur
-            demande renvoi mail validaion compte
-            modif mdp, mail
-            image de profil perso ou fourni par site
-            suppression compte
-
-        pour admin
-            visualisations de tous les comptes
-            validation comptes
-            gestion roles
-            suppression comptes
+            </tr>
 
 
 
-    </pre>
-   
-   
+        </table>
 
+
+
+
+    <?php endif ?>
 
 </div>

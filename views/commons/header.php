@@ -1,4 +1,4 @@
-<header>
+<header class="header">
 
     <?php require_once("views/commons/menu.php") ?>
     

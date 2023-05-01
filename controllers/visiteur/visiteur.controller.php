@@ -2,6 +2,7 @@
 
 require_once("./controllers/functionController.controller.php");
 require_once("./models/visiteur/visiteur.model.php");
+require_once("./models/utilisateur/todo_list.model.php");
 require_once("./controllers/functionController.controller.php");
 
 
@@ -9,8 +10,12 @@ function pageAccueil()
 {
     if(isset($_SESSION['profil']['login'])) {
         $datas =getUserInformation($_SESSION['profil']['login']);
+        $datasList = getToDoListUser($_SESSION['profil']['login']);
+        $typeFromToDoList = getTypeFromToDoList($_SESSION['profil']['login']);
     }else{
         $datas = "";
+        $datasList="";
+        $typeFromToDoList="";
     }
 
     $data_page = [
@@ -20,6 +25,8 @@ function pageAccueil()
         "template" => "views/commons/template.php",
         "css" => "accueilContainer",
         "utilisateur" => $datas,
+        "listUser" => $datasList,
+        "typeFromToDoList"=>$typeFromToDoList,
 
     ];
     genererPage($data_page);

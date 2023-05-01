@@ -1,3 +1,6 @@
+// Les mixins sont des "placeholders" avec des paramètres
+// Les mixins sont appelés avec @include nom_mixin...
+
 @mixin triangleBefore($couleurTriangle : white, $size:10px){
     &::before{
         content:"";
