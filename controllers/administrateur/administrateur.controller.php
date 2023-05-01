@@ -15,7 +15,6 @@ function droits()
         "page_title" => "Gestion Droits",
         "view" => "views/pages/administrateur/gestion_droits.view.php",
         "template" => "views/commons/template.php",
-        "css" => "droitsContainer",
         "js" => ["admin.js"],
         "utilisateurs" => $utilisateurs,
 

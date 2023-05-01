@@ -48,6 +48,12 @@ a {
   color: black;
 }
 
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .entryForm {
   display: flex;
   flex-direction: column;
@@ -161,7 +167,7 @@ header {
   max-width: 1920px;
   display: flex;
   align-items: center;
-  padding: 10px 2vw;
+  padding: 3px 2vw;
   background-color: #c4c4c4;
   box-shadow: inset 0px -3px 2px #888;
 }
@@ -189,7 +195,7 @@ header {
   text-align: center;
 }
 .navigation .nav-auth i {
-  font-size: clamp(40px, 40px + 3vw, 80px);
+  font-size: clamp(20px, 20px + 1.5vw, 40px);
   margin: 24px 0;
   color: #111;
 }
@@ -207,8 +213,8 @@ header {
   transform: scaleY(1);
 }
 .navigation .nav-auth img {
-  width: clamp(60px, 60px + 4vw, 100px);
-  height: clamp(60px, 60px + 4vw, 100px);
+  width: clamp(30px, 30px + 3vw, 60px);
+  height: clamp(30px, 30px + 3vw, 60px);
   border-radius: 50%;
 }
 .navigation .navlinks-container a {
@@ -321,21 +327,28 @@ header {
   }
 }
 
-footer {
+.nav-overlay {
   position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #c4c4c4;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(17, 17, 17, 0.6);
+}
+
+footer {
+  background-color: #f1f1f1;
+  font-size: 18px;
   color: #333;
   width: 100%;
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 40px;
+}
+footer a {
+  font-weight: bold;
 }
 
 .animTitres {
+  flex-grow: 1;
   width: 90%;
   margin: 25px auto;
 }
@@ -535,5 +548,6 @@ body {
   position: relative;
   max-width: 1920px;
   margin: 0 auto;
-  border-top: 1px solid #000;
+  display: flex;
+  flex-direction: column;
 }/*# sourceMappingURL=style.css.map */

@@ -11,7 +11,7 @@ header {
   max-width: 1920px;
   display: flex;
   align-items: center;
-  padding: 10px 2vw;
+  padding: 3px 2vw;
   background-color: #c4c4c4;
   box-shadow: inset 0px -3px 2px #888;
 
@@ -36,7 +36,7 @@ header {
     @include flexMid;
     text-align: center;
     i {
-      font-size: clamp(40px, 40px + 3vw, 80px);
+      font-size: clamp(20px, 20px + 1.5vw, 40px);
       margin: 24px 0;
       color: #111;
     }
@@ -55,8 +55,8 @@ header {
     }
 
     img {
-      width: clamp(60px, 60px + 4vw, 100px);
-      height: clamp(60px, 60px + 4vw, 100px);
+      width: clamp(30px, 30px + 3vw, 60px);
+      height: clamp(30px, 30px + 3vw, 60px);
       border-radius: 50%;
     }
   }
@@ -89,10 +89,12 @@ header {
       }
     }
   }
+
   @media (max-width: 999px) {
     .navigation {
       position: relative;
       padding: 5px 1.25vw;
+      // z-index: 5;
     }
 
     .nav-icon {
@@ -103,7 +105,6 @@ header {
       order: 3;
       i {
         font-size: 40px;
-
         margin: 12px 0;
       }
 
@@ -179,11 +180,17 @@ header {
         margin: 10px 10px;
       }
     }
-      .open {
-        transform: translateX(00%);
-      }
-
-     
-    
+    .open {
+      transform: translateX(00%);
+    }
   }
+}
+
+.nav-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #11111199;
 }

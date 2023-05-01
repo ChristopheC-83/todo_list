@@ -1,7 +1,12 @@
 .animTitres{
 
+    // pour que le contenu prenne tout la page et qu'on ait le footer toujours en bas
+    // flex-grow:1 lui demande de prendre toute la place restante même si pas assez de contenu
+    flex-grow: 1;
+
     width: 90%;
     margin: 25px auto;
+
 
     h1{
         font-size: clamp(20px,calc(20px + 1vw) ,40px);

@@ -67,9 +67,5 @@
         <?php endif ?>
     </div>
 
-            <div class="nav-overlay"></div>
-
-
-
 </nav>
 

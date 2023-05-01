@@ -23,7 +23,6 @@ function pageAccueil()
         "page_title" => "titre accueil",
         "view" => "views/pages/visiteur/accueil.view.php",
         "template" => "views/commons/template.php",
-        "css" => "accueilContainer",
         "utilisateur" => $datas,
         "listUser" => $datasList,
         "typeFromToDoList"=>$typeFromToDoList,
@@ -52,7 +51,6 @@ function pageLogin()
         "page_title" => "Connexion",
         "view" => "views/pages/visiteur/login.view.php",
         "template" => "views/commons/template.php",
-        "css" => "loginContainer",
         "js" => ["connexion.js"],
 
     ];
@@ -67,7 +65,6 @@ function creerCompte()
         "page_title" => "Enregistrement",
         "view" => "views/pages/visiteur/creerCompte.view.php",
         "template" => "views/commons/template.php",
-        "css" => "creationContainer",
         "js" => ["gestionComptes.js"],
 
     ];
@@ -82,7 +79,6 @@ function mdpOublie()
         "page_title" => "un oubli ?",
         "view" => "views/pages/visiteur/mdpOublie.view.php",
         "template" => "views/commons/template.php",
-        "css" => "loginContainer",
 
     ];
     genererPage($data_page);
