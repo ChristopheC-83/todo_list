@@ -1,9 +1,7 @@
-<div class="animTitres <?= $css ?>">
+<div class="animTitres droitsContainer">
 
     <h1>Gestion des droits</h1>
-    <h2>Gestion Droits pour administrateurs Contiendra</h2>
-
-    <p>Contenu gestion_droits</p>
+    <h2>Visualisez et modifiez les paramètres de vos utilisateurs</h2>
 
     <table>
         <thead>

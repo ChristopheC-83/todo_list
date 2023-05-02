@@ -5,8 +5,19 @@ header {
   margin: 0 auto;
 }
 
+.compensation-header {
+  width: 100%;
+  height: 94px;
+  background-color: crimson;
+
+  @media (max-width: 999px) {
+    height: 70px;
+  }
+}
+
 .navigation {
   position: fixed;
+  top: 0;
   width: 100%;
   max-width: 1920px;
   display: flex;

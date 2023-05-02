@@ -1,4 +1,4 @@
-<div class="animTitres <?= $css ?>">
+<div class="animTitres profilContainer">
 
     <h1><?= $utilisateur['login'] ?> : votre profil</h1>
     <h2>Profil et modifications</h2>
@@ -23,8 +23,7 @@
 
         <p>Nom : <?= $utilisateur['login'] ?></p>
         <br>
-        <p>Mail : <?= $utilisateur['mail'] ?> <i class="fa-solid fa-square-pen" id="btn_modif_mail"></i></p>
-        <br>
+
         <p>Statut : <?= $utilisateur['role'] ?></p>
         <br>
         <p>Compte :
@@ -34,6 +33,8 @@
                 en attente de validation
             <?php endif ?>
         </p>
+        <br> <br>
+        <p>Mail : <?= $utilisateur['mail'] ?> <i class="fa-solid fa-square-pen" id="btn_modif_mail"></i></p>
         <br>
         <p>Modifier le mot de passe <i class="fa-solid fa-square-pen" id="btn_modif_mdp"></i></p>
         <br>
@@ -81,24 +82,25 @@
     </div>
     <div class="overlay_img_site dnone">
 
-    <div class="images_site">
-        <?php
-        $dossier = "public/assets/images/profils/profils_site";
-        // Liste des fichiers dans le dossier
-        $fichiers = scandir($dossier);
-        ?>
-        <?php foreach ($fichiers  as $fichier) :
-            // Vérifie si le fichier est une image
-            if (in_array(pathinfo($fichier, PATHINFO_EXTENSION), array('jpg', 'jpeg', 'png', 'gif'))) :
-        ?>
-                <div class="image_site">
-                    <a href="changerAvatar/<?= $fichier ?>">
-                        <!-- on en est là ! -->
-                        <img src="<?= URL ?>/public/assets/images/profils/profils_site/<?= $fichier ?>">
-                    </a>
-                </div>
-            <?php endif; ?>
-        <?php endforeach ?>
-    </div></div>
+        <div class="images_site">
+            <?php
+            $dossier = "public/assets/images/profils/profils_site";
+            // Liste des fichiers dans le dossier
+            $fichiers = scandir($dossier);
+            ?>
+            <?php foreach ($fichiers  as $fichier) :
+                // Vérifie si le fichier est une image
+                if (in_array(pathinfo($fichier, PATHINFO_EXTENSION), array('jpg', 'jpeg', 'png', 'gif'))) :
+            ?>
+                    <div class="image_site">
+                        <a href="changerAvatar/<?= $fichier ?>">
+                            <!-- on en est là ! -->
+                            <img src="<?= URL ?>/public/assets/images/profils/profils_site/<?= $fichier ?>">
+                        </a>
+                    </div>
+                <?php endif; ?>
+            <?php endforeach ?>
+        </div>
+    </div>
 
 </div>
