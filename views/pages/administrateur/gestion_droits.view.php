@@ -57,9 +57,8 @@
                     <td><?= $utilisateur['mail'] ?></td>
                     <td>
                         <form action="<?= URL ?>admin/pageAdminSuppressionCompte" method="post">
-                            <button type="submit" 
-                            onclick="return confirm('Êtes-vous sûr de vouloir supprimer => <?= $utilisateur['login'] ?> ?')">
-                            Supprimer</button>
+                            <button type="submit" onclick="return confirm('Êtes-vous sûr de vouloir supprimer => <?= $utilisateur['login'] ?> ?')">
+                                Supprimer</button>
                             <input type="hidden" name="login" value="<?= $utilisateur['login'] ?>">
                         </form>
                     </td>

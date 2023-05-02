@@ -551,6 +551,34 @@ footer a {
   border: 1px solid #f1f1f1;
 }
 
+.listeContainer .menuDeroulantListe {
+  display: block;
+  margin: 15px auto;
+  text-align: center;
+}
+.listeContainer table {
+  width: 90%;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+.listeContainer tr,
+.listeContainer td,
+.listeContainer th {
+  border: 1px solid #f1f1f1;
+  text-align: center;
+}
+.listeContainer th:nth-child(1),
+.listeContainer th:nth-child(3),
+.listeContainer th:nth-child(4) {
+  width: 10%;
+}
+.listeContainer th {
+  padding: 10px;
+}
+.listeContainer td {
+  padding: 7px;
+}
+
 body {
   background-color: #333;
   color: #f1f1f1;
