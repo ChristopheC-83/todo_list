@@ -89,7 +89,7 @@ try {
                 switch ($url[1]) {
                     case "profil":
                         //pour ne pas avoir à se reconnecter en permanence si on est actif sur le site.
-                        genererCookieConnexion(); 
+                        genererCookieConnexion();
                         profil();
                         break;
                     case "deconnexion":
@@ -122,6 +122,9 @@ try {
                         break;
                     case "changerAvatar":
                         validation_ChangerAvatar($url[2]);
+                        break;
+                    case "checkedElementListe":
+                        validation_checkedElementListe($_POST['id'], $_POST['checkbox']);
                         break;
                     case "supprimerElementListe":
                         validation_supprimerElementListe($_POST['id']);

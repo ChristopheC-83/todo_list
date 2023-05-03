@@ -36,10 +36,24 @@ function bdSuppressionElementListe($id, $login)
             WHERE id = :id
             ";
     $stmt = getBDD()->prepare($req);
-    // $stmt->bindValue(":login", $login, PDO::PARAM_STR);
+    // $stmt->bindValue(":login", $login, PDO::PARAM_STR);  <= pas utilisé dans le requête !!! donc on ne met pas !!!
     $stmt->bindValue(":id", $id, PDO::PARAM_INT);
     $stmt->execute();
     $suppressionOk = ($stmt->rowCount() > 0);
     $stmt->closeCursor();
     return $suppressionOk;
+}
+function bdCheckElementListe($id, $fait, $login)
+{
+    $table = "TodoTable__" . $login;
+    $req = "UPDATE $table set fait = :fait
+            WHERE id = :id
+            ";
+    $stmt = getBDD()->prepare($req);
+    $stmt->bindValue(":fait", $fait, PDO::PARAM_INT);
+    $stmt->bindValue(":id", $id, PDO::PARAM_INT);
+    $stmt->execute();
+    $ModifOK = ($stmt->rowCount() > 0);
+    $stmt->closeCursor();
+    return $ModifOK;
 }

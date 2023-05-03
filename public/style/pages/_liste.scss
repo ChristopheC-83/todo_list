@@ -16,6 +16,18 @@
   th {
     border: 1px solid $blanc1;
     text-align: center;
+
+    .elementFait {
+      color: #eee;
+      text-decoration: line-through;
+      text-align: right;
+      padding: 0 15px;
+    }
+    .elementAFaire{
+      color:white;
+      text-align: left;
+      padding: 0 15px;
+    }
   }
 
   th:nth-child(1),
@@ -32,9 +44,9 @@
     padding: 7px;
   }
 
-  button{
+  button {
     background-color: transparent;
-    color : $blanc1;
+    color: $blanc1;
     border: none;
-}
+  }
 }

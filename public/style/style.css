@@ -567,6 +567,21 @@ footer a {
   border: 1px solid #f1f1f1;
   text-align: center;
 }
+.listeContainer tr .elementFait,
+.listeContainer td .elementFait,
+.listeContainer th .elementFait {
+  color: #eee;
+  text-decoration: line-through;
+  text-align: right;
+  padding: 0 15px;
+}
+.listeContainer tr .elementAFaire,
+.listeContainer td .elementAFaire,
+.listeContainer th .elementAFaire {
+  color: white;
+  text-align: left;
+  padding: 0 15px;
+}
 .listeContainer th:nth-child(1),
 .listeContainer th:nth-child(3),
 .listeContainer th:nth-child(4) {

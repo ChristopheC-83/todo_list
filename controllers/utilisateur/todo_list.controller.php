@@ -15,5 +15,12 @@ function validation_supprimerElementListe($id){
         ajouterMessageAlerte("Echec de la suppression", "rouge");
     }
     header('location:' . URL . "accueil");
+}
+
+function validation_checkedElementListe($id, $fait){
+    if (!bdCheckElementListe($id,$fait, $_SESSION['profil']['login'])){
+        ajouterMessageAlerte("Echec de l'action", "rouge");
+    }
+    header('location:' . URL . "accueil");
 
 }
