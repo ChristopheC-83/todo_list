@@ -21,5 +21,3 @@ window.onload = function() {
     gsap.to(alerteArray, { y: -30, duration: 1, autoAlpha: 0, delay: 1, stagger : 1});
   };
 
-
-console.log("coucou de js_title")
