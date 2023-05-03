@@ -11,6 +11,7 @@ require_once("./controllers/utilisateur/utilisateur.controller.php");
 require_once("./controllers/functionController.controller.php");
 require_once("./controllers/security.controller.php");
 require_once("./controllers/images.controller.php");
+require_once("./controllers/utilisateur/todo_list.controller.php");
 
 try {
     if (empty($_GET['page'])) {
@@ -121,6 +122,9 @@ try {
                         break;
                     case "changerAvatar":
                         validation_ChangerAvatar($url[2]);
+                        break;
+                    case "supprimerElementListe":
+                        validation_supprimerElementListe($_POST['id']);
                         break;
                     default:
                         throw new Exception("La page demandée n'existe pas.");

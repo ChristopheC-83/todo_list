@@ -7,16 +7,19 @@
 
     <?php else : ?>
 
-        <form method="POST" class = "menuDeroulantListe">
+        <form method="POST" class="menuDeroulantListe">
             <select name="liste_choisie" onchange=submit()>
 
                 <?php $listes = array_unique(array_column($typeFromToDoList, 'type')); ?>
                 <option value="">Toutes les listes</option>
                 <?php foreach ($listes as $liste) : ?>
-                    <option value="<?= $liste ?>" <?php if (!empty($_POST['liste_choisie']) && $_POST['liste_choisie'] == $liste) {
+                    <option value="<?= $liste ?>" <?php if (!empty($_POST['liste_choisie']) && $_POST['liste_choisie'] === $liste) {
                                                         echo 'selected';
-                                                    } ?>><?= $liste ?></option>
+                                                    } ?>>
+                        <?= $liste ?>
+                    </option>
                 <?php endforeach ?>
+
 
             </select>
         </form>
@@ -29,34 +32,41 @@
                 <th>Supprimer</th>
             </tr>
             <tr>
-                <?php foreach($listUser as $elementListe) :?>
-                <td>
-                    <form action="checkedElementListe" method="post">
-                        <input type="checkbox" name="" id="" 
-                        <?php if($elementListe['fait'] === 1) {echo 'checked';} ?>
-                        >
-                    </form>
-                </td>
-                <td>
-                    <?=$elementListe['à_faire']?>
-                </td>
-                <td>
-                    <form action="supprimerElementListe" method="post">
-                        <input type="hidden" name="">
-                        <i class="fa-solid fa-trash"></i>
-                    </form>
-                </td>
-                <td>
-                    <form action="modifierElementListe" method="post">
-                        <input type="hidden" name="">
-                        <i class="fa-solid fa-pen"></i>
-                    </form>
-                </td>
+                <?php foreach ($listUser as $elementListe) : ?>
+                    <td>
+                        <form action="checkedElementListe" method="post">
+                            <input type="checkbox" name="" id="" <?php if ($elementListe['fait'] === 1) {
+                                                                        echo 'checked';
+                                                                    } ?>>
+                        </form>
+                    </td>
+                    <td>
+                        <?= $elementListe['à_faire'] ?>
+                    </td>
+
+                    <td>
+                        <form action="modifierElementListe" method="post">
+                            <input type="hidden" name="">
+                            <button type="submit">
+                                <i class="fa-solid fa-pen"></i>
+                            </button>
+                        </form>
+                    </td>
+
+
+                    <td>
+                        <form action="compte/supprimerElementListe" method="post">
+                            <input type="hidden" name="id" value=<?= $elementListe['id'] ?>>
+                            <button type="submit">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </form>
+                    </td>
 
 
 
             </tr>
-            <?php endforeach ?>
+        <?php endforeach ?>
 
 
 

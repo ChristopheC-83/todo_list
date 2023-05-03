@@ -29,3 +29,17 @@ function getTypeFromToDoList($login)
 }
 
 
+function bdSuppressionElementListe($id, $login)
+{
+    $table = "TodoTable__" . $login;
+    $req = "DELETE  FROM $table 
+            WHERE id = :id
+            ";
+    $stmt = getBDD()->prepare($req);
+    // $stmt->bindValue(":login", $login, PDO::PARAM_STR);
+    $stmt->bindValue(":id", $id, PDO::PARAM_INT);
+    $stmt->execute();
+    $suppressionOk = ($stmt->rowCount() > 0);
+    $stmt->closeCursor();
+    return $suppressionOk;
+}

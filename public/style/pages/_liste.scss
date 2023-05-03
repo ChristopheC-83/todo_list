@@ -1,10 +1,9 @@
 .listeContainer {
-
-.menuDeroulantListe{
+  .menuDeroulantListe {
     display: block;
     margin: 15px auto;
     text-align: center;
-}
+  }
 
   table {
     width: 90%;
@@ -25,10 +24,17 @@
     width: 10%;
   }
 
-  th{
+  th {
     padding: 10px;
-}
-td{
+  }
+
+  td {
     padding: 7px;
+  }
+
+  button{
+    background-color: transparent;
+    color : $blanc1;
+    border: none;
 }
 }

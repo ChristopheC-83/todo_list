@@ -578,6 +578,11 @@ footer a {
 .listeContainer td {
   padding: 7px;
 }
+.listeContainer button {
+  background-color: transparent;
+  color: #f1f1f1;
+  border: none;
+}
 
 body {
   background-color: #333;
