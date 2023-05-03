@@ -45,8 +45,8 @@
                     </td>
 
                     <td>
-                        <form action="modifierElementListe" method="post">
-                            <input type="hidden" name="">
+                        <form action="compte/modifierElementListe" method="post">
+                            <input type="hidden" name="id">
                             <button type="submit">
                                 <i class="fa-solid fa-pen"></i>
                             </button>
