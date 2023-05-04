@@ -57,3 +57,21 @@ function bdCheckElementListe($id, $fait, $login)
     $stmt->closeCursor();
     return $ModifOK;
 }
+
+function bdModifierElementListe($id,$type, $a_faire, $login)
+{
+    $table = "TodoTable__" . $login;
+    $req = "UPDATE $table set type = :type,  a_faire = :a_faire
+            WHERE id = :id
+            ";
+    $stmt = getBDD()->prepare($req);
+    $stmt->bindValue(":type", $type, PDO::PARAM_STR);
+    $stmt->bindValue(":a_faire", $a_faire, PDO::PARAM_STR);
+    $stmt->bindValue(":id", $id, PDO::PARAM_INT);
+    $stmt->execute();
+    $ModifOK = ($stmt->rowCount() > 0);
+    $stmt->closeCursor();
+    return $ModifOK;
+}
+
+

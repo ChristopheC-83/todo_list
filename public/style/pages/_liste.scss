@@ -1,4 +1,6 @@
 .listeContainer {
+  position: relative;
+
   .menuDeroulantListe {
     display: block;
     margin: 15px auto;
@@ -23,8 +25,8 @@
       text-align: right;
       padding: 0 15px;
     }
-    .elementAFaire{
-      color:white;
+    .elementAFaire {
+      color: white;
       text-align: left;
       padding: 0 15px;
     }
@@ -32,7 +34,8 @@
 
   th:nth-child(1),
   th:nth-child(3),
-  th:nth-child(4) {
+  th:nth-child(4),
+  th:nth-child(5) {
     width: 10%;
   }
 
@@ -49,4 +52,37 @@
     color: $blanc1;
     border: none;
   }
+
+}
+.modifElementListeModale {
+  position: absolute;
+  width: 80%;
+  min-height: 150px;
+  border: 1px solid $blanc1;
+  border-radius: 10px;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #f1f1f199;
+  backdrop-filter: blur(1px);
+  border-top: none;
+  border-left: none;
+  color: black;
+  z-index: 10;
+
+  h3{
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 10px;
+  }
+
+}
+.overlayElementListeModale {
+  position: fixed;
+  background-color: #55555555;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
 }

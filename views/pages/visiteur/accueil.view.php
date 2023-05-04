@@ -28,6 +28,7 @@
             <tr>
                 <th>Fait ?</th>
                 <th>Liste</th>
+                <th>Type</th>
                 <th>Modifier</th>
                 <th>Supprimer</th>
             </tr>
@@ -35,104 +36,21 @@
                 <?php foreach ($listUser as $elementListe) : ?>
                     <?php if (!empty($_POST['liste_choisie'])) : ?>
                         <?php if ($elementListe['type'] === $_POST['liste_choisie']) : ?>
-                            <td>
-                                <form action="compte/checkedElementListe" method="post">
-                                    <input type="hidden" name="id" value=<?= $elementListe['id'] ?>>
-                                    <input type="hidden" name="checkbox" value=<?= $elementListe['fait'] === 0 ? 1 : 0; ?>>
-                                    <button type="submit">
-                                        <?php if ($elementListe['fait'] === 0) : ?>
-                                            <i class="fa-regular fa-square"></i>
-                                        <?php else : ?>
-                                            <i class="fa-regular fa-square-check"></i>
-                                        <?php endif ?>
-                                    </button>
-                                </form>
-                            </td>
-
-
-                            <td class="<?php if ($elementListe['fait'] === 1) {
-                                            echo "elementFait";
-                                        } else {
-                                            echo "elementAFaire";
-                                        } ?>">
-                                <p><?= $elementListe['à_faire'] ?></p>
-                            </td>
-
-                            <td>
-                                <form action="compte/modifierElementListe" method="post">
-                                    <input type="hidden" name="id">
-                                    <button type="submit">
-                                        <i class="fa-solid fa-pen"></i>
-                                    </button>
-                                </form>
-                            </td>
-
-
-                            <td>
-                                <form action="compte/supprimerElementListe" method="post">
-                                    <input type="hidden" name="id" value=<?= $elementListe['id'] ?>>
-                                    <button type="submit">
-                                        <i class="fa-solid fa-trash"></i>
-                                    </button>
-                                </form>
-                            </td>
-
-
+                            <?php require_once "./views/commons/liste_affichee.php" ?>
                         <?php endif ?>
-                        <?php else :?>
-                            <td>
-                                <form action="compte/checkedElementListe" method="post">
-                                    <input type="hidden" name="id" value=<?= $elementListe['id'] ?>>
-                                    <input type="hidden" name="checkbox" value=<?= $elementListe['fait'] === 0 ? 1 : 0; ?>>
-                                    <button type="submit">
-                                        <?php if ($elementListe['fait'] === 0) : ?>
-                                            <i class="fa-regular fa-square"></i>
-                                        <?php else : ?>
-                                            <i class="fa-regular fa-square-check"></i>
-                                        <?php endif ?>
-                                    </button>
-                                </form>
-                            </td>
-
-
-                            <td class="<?php if ($elementListe['fait'] === 1) {
-                                            echo "elementFait";
-                                        } else {
-                                            echo "elementAFaire";
-                                        } ?>">
-                                <p><?= $elementListe['à_faire'] ?></p>
-                            </td>
-
-                            <td>
-                                <form action="compte/modifierElementListe" method="post">
-                                    <input type="hidden" name="id">
-                                    <button type="submit">
-                                        <i class="fa-solid fa-pen"></i>
-                                    </button>
-                                </form>
-                            </td>
-
-
-                            <td>
-                                <form action="compte/supprimerElementListe" method="post">
-                                    <input type="hidden" name="id" value=<?= $elementListe['id'] ?>>
-                                    <button type="submit">
-                                        <i class="fa-solid fa-trash"></i>
-                                    </button>
-                                </form>
-                            </td>
+                    <?php else : ?>
+                        <?php require "./views/commons/liste_affichee.php" ?>
+                        <!-- et pas require_once ! sinon, une seule ligne.... ben oui, on appelle une seule fois !-->
                     <?php endif ?>
             </tr>
         <?php endforeach ?>
-
-
-
-        </table>
-
-
-
-
-
+        
+    </table>
+    
     <?php endif ?>
+    <div class="overlayElementListeModale dnone"></div>
 
 </div>
+
+
+

@@ -26,7 +26,7 @@ function pageAccueil()
         "utilisateur" => $datas,
         "listUser" => $datasList,
         "typeFromToDoList"=>$typeFromToDoList,
-        "js" => ["profil.js"]
+        "js" => ["profil.js", "todo.js"]
 
     ];
     genererPage($data_page);

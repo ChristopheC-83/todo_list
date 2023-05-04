@@ -24,3 +24,10 @@ function validation_checkedElementListe($id, $fait){
     header('location:' . URL . "accueil");
 
 }
+function validation_modifierElementListe($id, $type, $a_faire){
+    if (!bdModifierElementListe($id, $type, $a_faire, $_SESSION['profil']['login'])){
+        ajouterMessageAlerte("Echec de l'action", "rouge");
+    }
+    header('location:' . URL . "accueil");
+
+}

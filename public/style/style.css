@@ -64,15 +64,22 @@ footer {
 .entryForm label {
   margin: 15px 0;
 }
-.entryForm input {
+.entryForm input,
+.entryForm textarea {
   width: 100%;
   height: 40px;
   border-radius: 5px;
   font-size: 18px;
   outline-color: violet;
 }
-.entryForm input:focus {
+.entryForm input:focus,
+.entryForm textarea:focus {
   box-shadow: 3px 3px 6px violet;
+}
+.entryForm textarea {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 5px;
+  resize: none;
 }
 .entryForm .afficherMDP {
   display: flex;
@@ -551,6 +558,9 @@ footer a {
   border: 1px solid #f1f1f1;
 }
 
+.listeContainer {
+  position: relative;
+}
 .listeContainer .menuDeroulantListe {
   display: block;
   margin: 15px auto;
@@ -584,7 +594,8 @@ footer a {
 }
 .listeContainer th:nth-child(1),
 .listeContainer th:nth-child(3),
-.listeContainer th:nth-child(4) {
+.listeContainer th:nth-child(4),
+.listeContainer th:nth-child(5) {
   width: 10%;
 }
 .listeContainer th {
@@ -597,6 +608,39 @@ footer a {
   background-color: transparent;
   color: #f1f1f1;
   border: none;
+}
+
+.modifElementListeModale {
+  position: absolute;
+  width: 80%;
+  min-height: 150px;
+  border: 1px solid #f1f1f1;
+  border-radius: 10px;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(241, 241, 241, 0.6);
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
+  border-top: none;
+  border-left: none;
+  color: black;
+  z-index: 10;
+}
+.modifElementListeModale h3 {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  margin: 10px;
+}
+
+.overlayElementListeModale {
+  position: fixed;
+  background-color: rgba(85, 85, 85, 0.3333333333);
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
 }
 
 body {
