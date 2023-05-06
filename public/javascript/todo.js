@@ -42,9 +42,17 @@ fermerModale.forEach((btn, index) => {
 
 const iconeAjouterElementListe = document.querySelector(".iconeAjouterElementListe")
 const ajouterElementListe = document.querySelector("#ajouterElementListe")
+const overlayAjouterElementListeModale = document.querySelector(".overlayAjouterElementListeModale")
+
 if(iconeAjouterElementListe){
   iconeAjouterElementListe.addEventListener("click", ()=>{
     ajouterElementListe.classList.remove("dnone")
-  
+    overlayAjouterElementListeModale.classList.remove("dnone")
+  })
+}
+if(overlayAjouterElementListeModale){
+  overlayAjouterElementListeModale.addEventListener("click", ()=>{
+    ajouterElementListe.classList.add("dnone")
+    overlayAjouterElementListeModale.classList.add("dnone")
   })
 }

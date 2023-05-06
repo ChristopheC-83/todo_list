@@ -129,6 +129,9 @@ try {
                     case "supprimerElementListe":
                         validation_supprimerElementListe($_POST['id']);
                         break;
+                    case "supprimerCoche":
+                        validation_supprimerCoche();
+                        break;
                     case "modifierElementListe":
                         validation_modifierElementListe($_POST['id'], $_POST['type'] ,$_POST['a_faire']);
                         break;

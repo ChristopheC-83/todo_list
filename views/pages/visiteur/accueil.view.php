@@ -8,8 +8,10 @@
     <?php else : ?>
 
         <div class="iconeAjouterElementListe"><i class="fa-solid fa-circle-plus"></i></div>
+        <div class="overlayAjouterElementListeModale dnone">
+        <i class="fa-regular fa-circle-xmark fermerModale"></i></div>
 
-        <div class="modifElementListeModale dnone" id="ajouterElementListe">
+        <div class="ajouterElementListe dnone" id="ajouterElementListe">
             <h3>Ajouter un élément dans votre ToDoList</h3>
             <form action="compte/ajouterElementListe" method="post" class="entryForm">
                 <label>Type</label>
@@ -59,11 +61,11 @@
         <?php endforeach ?>
 
         </table>
-
+        
+        <div class="annulerElementsFaits"><a href="compte/supprimerCoche"><i class="fa-solid fa-circle-xmark"></i></a></div>
     <?php endif ?>
     <div class="overlayElementListeModale dnone">
         <i class="fa-regular fa-circle-xmark fermerModale"></i>
     </div>
-
 
 </div>

@@ -43,6 +43,18 @@ function bdSuppressionElementListe($id, $login)
     $stmt->closeCursor();
     return $suppressionOk;
 }
+function bdSuppressionElementCoche($login)
+{
+    $table = "TodoTable__" . $login;
+    $req = "DELETE  FROM $table 
+            WHERE fait=1
+            ";
+    $stmt = getBDD()->prepare($req);
+    $stmt->execute();
+    $suppressionOk = ($stmt->rowCount() > 0);
+    $stmt->closeCursor();
+    return $suppressionOk;
+}
 function bdCheckElementListe($id, $fait, $login)
 {
     $table = "TodoTable__" . $login;

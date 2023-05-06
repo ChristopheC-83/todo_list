@@ -85,7 +85,7 @@
   left: 0;
 }
 
-.fermerModale{
+.fermerModale {
   position: absolute;
   font-size: 40px;
   border: 1px solid $blanc1;
@@ -95,19 +95,35 @@
   transform: translateX(-50%);
   background-color: crimson;
   overflow: hidden;
-
+  cursor: pointer;
 }
-.iconeAjouterElementListe{
+.iconeAjouterElementListe {
   text-align: center;
   font-size: 40px;
   color: yellowgreen;
+  cursor: pointer;
 }
 
-.ajouterElementListeModale{
-  h3{
+.ajouterElementListeModale {
+  h3 {
     text-align: center;
     margin: 15px;
-    
-
   }
+}
+
+.ajouterElementListe {
+  @extend .modifElementListeModale;
+}
+
+.annulerElementsFaits {
+  @include flexMid;
+  a{
+  font-size: 40px;
+  color: crimson;
+  margin-top: 30px;
+  cursor: pointer;}
+}
+
+.overlayAjouterElementListeModale {
+  @extend .overlayElementListeModale;
 }

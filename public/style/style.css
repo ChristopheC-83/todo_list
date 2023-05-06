@@ -610,7 +610,7 @@ footer a {
   border: none;
 }
 
-.modifElementListeModale {
+.modifElementListeModale, .ajouterElementListe {
   position: absolute;
   width: 80%;
   min-height: 120px;
@@ -627,14 +627,14 @@ footer a {
   color: black;
   z-index: 10;
 }
-.modifElementListeModale h3 {
+.modifElementListeModale h3, .ajouterElementListe h3 {
   text-align: center;
   font-size: 22px;
   font-weight: bold;
   margin: 10px;
 }
 
-.overlayElementListeModale {
+.overlayElementListeModale, .overlayAjouterElementListeModale {
   position: fixed;
   background-color: rgba(85, 85, 85, 0.3333333333);
   top: 0;
@@ -653,17 +653,31 @@ footer a {
   transform: translateX(-50%);
   background-color: crimson;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .iconeAjouterElementListe {
   text-align: center;
   font-size: 40px;
   color: yellowgreen;
+  cursor: pointer;
 }
 
 .ajouterElementListeModale h3 {
   text-align: center;
   margin: 15px;
+}
+
+.annulerElementsFaits {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.annulerElementsFaits a {
+  font-size: 40px;
+  color: crimson;
+  margin-top: 30px;
+  cursor: pointer;
 }
 
 body {
