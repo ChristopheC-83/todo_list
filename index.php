@@ -132,6 +132,9 @@ try {
                     case "modifierElementListe":
                         validation_modifierElementListe($_POST['id'], $_POST['type'] ,$_POST['a_faire']);
                         break;
+                    case "ajouterElementListe":
+                        validation_ajouterElementListe($_POST['type'] ,$_POST['a_faire']);
+                        break;
                     default:
                         throw new Exception("La page demandée n'existe pas.");
                 }

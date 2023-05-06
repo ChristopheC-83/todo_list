@@ -31,3 +31,12 @@ function validation_modifierElementListe($id, $type, $a_faire){
     header('location:' . URL . "accueil");
 
 }
+function validation_ajouterElementListe($type, $a_faire){
+    
+    $fait=0;
+    if (!bdAjouterElementListe($a_faire, $fait, $type, $_SESSION['profil']['login'])){
+        ajouterMessageAlerte("Echec de l'ajout", "rouge");
+    }
+    header('location:' . URL . "accueil");
+
+}

@@ -613,7 +613,7 @@ footer a {
 .modifElementListeModale {
   position: absolute;
   width: 80%;
-  min-height: 150px;
+  min-height: 120px;
   border: 1px solid #f1f1f1;
   border-radius: 10px;
   top: 30%;
@@ -641,6 +641,29 @@ footer a {
   bottom: 0;
   right: 0;
   left: 0;
+}
+
+.fermerModale {
+  position: absolute;
+  font-size: 40px;
+  border: 1px solid #f1f1f1;
+  border-radius: 50%;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: crimson;
+  overflow: hidden;
+}
+
+.iconeAjouterElementListe {
+  text-align: center;
+  font-size: 40px;
+  color: yellowgreen;
+}
+
+.ajouterElementListeModale h3 {
+  text-align: center;
+  margin: 15px;
 }
 
 body {

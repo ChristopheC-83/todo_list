@@ -34,12 +34,12 @@
         <i class="fa-solid fa-pen"></i>
     </button>
 
-    <div class="modifElementListeModale dnone ">
+    <div class="modifElementListeModale dnone">
         <h3>Modifications d'un élément</h3>
         <form action="compte/modifierElementListe" method="post" class="entryForm">
             <input type="hidden" name="id" value=<?= $elementListe['id'] ?>>
-            <label >Type</label>
-            <textarea type="text" name="type" autocomplete="on"><?= $elementListe['type']?></textarea>
+            <label>Type</label>
+            <textarea type="text" name="type" autocomplete="on"><?= $elementListe['type'] ?></textarea>
             <label>Elément</label>
             <textarea type="text" name="a_faire"><?= $elementListe['a_faire'] ?></textarea>
             <button type="submit">Valider modification(s)</button>
@@ -58,3 +58,4 @@
         </button>
     </form>
 </td>
+

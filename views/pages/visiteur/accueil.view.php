@@ -7,6 +7,19 @@
 
     <?php else : ?>
 
+        <div class="iconeAjouterElementListe"><i class="fa-solid fa-circle-plus"></i></div>
+
+        <div class="modifElementListeModale dnone" id="ajouterElementListe">
+            <h3>Ajouter un élément dans votre ToDoList</h3>
+            <form action="compte/ajouterElementListe" method="post" class="entryForm">
+                <label>Type</label>
+                <input type="text" name="type"></input>
+                <label>Elément</label>
+                <input type="text" name="a_faire"></input>
+                <button type="submit">Valider L'ajout</button>
+            </form>
+        </div>
+
         <form method="POST" class="menuDeroulantListe">
             <select name="liste_choisie" onchange=submit()>
 
@@ -27,7 +40,7 @@
         <table>
             <tr>
                 <th>Fait ?</th>
-                <th>Liste</th>
+                <th>Eléments</th>
                 <th>Type</th>
                 <th>Modifier</th>
                 <th>Supprimer</th>
@@ -36,7 +49,7 @@
                 <?php foreach ($listUser as $elementListe) : ?>
                     <?php if (!empty($_POST['liste_choisie'])) : ?>
                         <?php if ($elementListe['type'] === $_POST['liste_choisie']) : ?>
-                            <?php require_once "./views/commons/liste_affichee.php" ?>
+                            <?php require "./views/commons/liste_affichee.php" ?>
                         <?php endif ?>
                     <?php else : ?>
                         <?php require "./views/commons/liste_affichee.php" ?>
@@ -44,13 +57,13 @@
                     <?php endif ?>
             </tr>
         <?php endforeach ?>
-        
-    </table>
-    
+
+        </table>
+
     <?php endif ?>
-    <div class="overlayElementListeModale dnone"></div>
+    <div class="overlayElementListeModale dnone">
+        <i class="fa-regular fa-circle-xmark fermerModale"></i>
+    </div>
+
 
 </div>
-
-
-

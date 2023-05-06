@@ -73,5 +73,20 @@ function bdModifierElementListe($id,$type, $a_faire, $login)
     $stmt->closeCursor();
     return $ModifOK;
 }
+function bdAjouterElementListe($a_faire, $fait, $type, $login)
+{
+    $table = "TodoTable__" . $login;
+    $req = "INSERT INTO $table (`a_faire`, `fait`, `type`) 
+    VALUES (:a_faire, :fait, :type)
+            ";
+    $stmt = getBDD()->prepare($req);
+    $stmt->bindValue(":a_faire", $a_faire, PDO::PARAM_STR);
+    $stmt->bindValue(":fait", $fait, PDO::PARAM_INT);
+    $stmt->bindValue(":type", $type, PDO::PARAM_STR);
+    $stmt->execute();
+    $CreationOK = ($stmt->rowCount() > 0);
+    $stmt->closeCursor();
+    return $CreationOK;
+}
 
 
