@@ -4,6 +4,7 @@ require_once("./controllers/images.controller.php");
 require_once("./controllers/security.controller.php");
 require_once("./controllers/functionController.controller.php");
 require_once("./models/administrateur/administrateur.model.php");
+require_once("./models/utilisateur/todo_list.model.php");
 
 
 function droits()
@@ -50,6 +51,7 @@ function adminSuppressionCompte($login)
     rmdir("public/assets/images/profils/" . $login);
 
     if (bdSuppCompte($login)) {
+        bdSuppToDoList($login);
         ajouterMessageAlerte("Suppression du compte effectuée.", "vert");
         header('location:' . URL . "admin/gestion_droits");
     } else {
