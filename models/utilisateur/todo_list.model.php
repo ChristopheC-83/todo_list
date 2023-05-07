@@ -100,5 +100,16 @@ function bdAjouterElementListe($a_faire, $fait, $type, $login)
     $stmt->closeCursor();
     return $CreationOK;
 }
+function bdSuppToDoList($login)
+{
+    $table = "TodoTable__" . $login;
+    $req = "DROP TABLE $table
+            ";
+    $stmt = getBDD()->prepare($req);
+    $stmt->execute();
+    $CreationOK = ($stmt->rowCount() > 0);
+    $stmt->closeCursor();
+    return $CreationOK;
+}
 
 

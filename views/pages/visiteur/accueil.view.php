@@ -2,7 +2,7 @@
 
     <?php if (!estConnecte()) :  ?>
         <h2 class="titreAcueil">Je m'enregistre si ce n'est pas déjà fait =>
-            <a href="<?= URL ?>login"><i class="fa-solid fa-file-circle-plus"></i></a>
+            <a href="<?= URL ?>creerCompte"><i class="fa-solid fa-file-circle-plus"></i></a>
         </h2>
         <h2 class="titreAcueil">Je me connecte =>
             <a href="<?= URL ?>login"><i class="fa-solid fa-right-to-bracket"></i></a>

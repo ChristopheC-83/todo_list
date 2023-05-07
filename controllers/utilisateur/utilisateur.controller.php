@@ -141,6 +141,9 @@ function validation_suppressionCompte(){
     rmdir("public/assets/images/profils/".$_SESSION['profil']['login']);
 
     if(bdSuppCompte($_SESSION['profil']['login'])){
+        if(bdSuppToDoList($_SESSION['profil']['login'])){
+            ajouterMessageAlerte("Suppression table OK", "vert");
+        }
         deconnexion();
         ajouterMessageAlerte("Suppression du compte effectuée.", "vert");
         header('location:' . URL . "accueil");
