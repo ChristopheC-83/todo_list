@@ -7,6 +7,7 @@ define("URL", str_replace("index.php", "", (isset($_SERVER['HTTPS']) ? "https"  
 
 require_once("./controllers/visiteur/visiteur.controller.php");
 require_once("./controllers/administrateur/administrateur.controller.php");
+require_once("./controllers/administrateur/admin_todo_list.controller.php");
 require_once("./controllers/utilisateur/utilisateur.controller.php");
 require_once("./controllers/functionController.controller.php");
 require_once("./controllers/security.controller.php");
@@ -167,6 +168,9 @@ try {
                         break;
                     case "visu_listes":
                         adminVisuListes();
+                        break;
+                    case "adminCheckedElementListe":
+                        validation_adminCheckedElementListe($_POST['id'], $_POST['checkbox'], $_POST['login']);
                         break;
 
                     default:

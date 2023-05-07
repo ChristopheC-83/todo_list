@@ -1,6 +1,7 @@
 <div class="animTitres visuListes">
 
-
+    <!-- <?=afficherTableau($liste_utilisateurs)?>
+    <?=afficherTableau($listUser)?> -->
 
     <div class="adminListeContainer">
         <table>

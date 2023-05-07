@@ -4,8 +4,9 @@
 </td>
 
 <td>
-    <form action="compte/checkedElementListe" method="post">
+    <form action="adminCheckedElementListe" method="post">
         <input type="hidden" name="id" value=<?= $elementListe['id'] ?>>
+        <input type="hidden" name="login" value=<?= $utilisateur['login'] ?>>
         <input type="hidden" name="checkbox" value=<?= $elementListe['fait'] === 0 ? 1 : 0; ?>>
         <button type="submit">
             <?php if ($elementListe['fait'] === 0) : ?>
