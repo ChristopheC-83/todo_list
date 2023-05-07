@@ -39,9 +39,13 @@
         <?php else : ?>
 
             <?php if (estAdministrateur()) :  ?>
+                <a href="<?= URL ?>admin/visu_listes">
+                    <p>Les Listes</p>
+                </a>
                 <a href="<?= URL ?>admin/gestion_droits">
                     <p>Gestion des droits</p>
                 </a>
+
 
             <?php endif ?>
             <a href="<?= URL ?>compte/deconnexion">
@@ -55,7 +59,7 @@
         <?php if (estConnecte()) :  ?>
             <a href="<?= URL ?>compte/profil">
                 <div class="profil_navbar">
-                    <img src="<?= URL ?>/public/assets/images/<?= $_SESSION['profil']['image']?>" alt="" class="img_profil_navbar">
+                    <img src="<?= URL ?>/public/assets/images/<?= $_SESSION['profil']['image'] ?>" alt="" class="img_profil_navbar">
                 </div>
                 <p>profil</p>
             </a>
@@ -68,4 +72,3 @@
     </div>
 
 </nav>
-

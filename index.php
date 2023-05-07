@@ -165,6 +165,9 @@ try {
                     case "pageAdminSuppressionCompte":
                         adminSuppressionCompte($_POST['login']);
                         break;
+                    case "visu_listes":
+                        adminVisuListes();
+                        break;
 
                     default:
                         throw new Exception("La page demandée n'existe pas.");

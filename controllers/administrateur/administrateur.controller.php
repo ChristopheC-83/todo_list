@@ -36,23 +36,48 @@ function validation_modificationRole($login, $role)
 function validation_modificationValidation($login, $est_valide)
 {
     if (bdModificationValidationUser($login, $est_valide)) {
-        ajouterMessageAlerte("Le compte de ".$login . " est désormais validé.", "vert");
+        ajouterMessageAlerte("Le compte de " . $login . " est désormais validé.", "vert");
     } else {
         ajouterMessageAlerte("La validation a échoué.", "rouge");
     }
     header('location:' . URL . "admin/gestion_droits");
 }
 
-function adminSuppressionCompte($login){
-    
-    suppressionImageUtilisateur($login);
-    rmdir("public/assets/images/profils/".$login);
+function adminSuppressionCompte($login)
+{
 
-    if(bdSuppCompte($login)){
+    suppressionImageUtilisateur($login);
+    rmdir("public/assets/images/profils/" . $login);
+
+    if (bdSuppCompte($login)) {
         ajouterMessageAlerte("Suppression du compte effectuée.", "vert");
         header('location:' . URL . "admin/gestion_droits");
-    } else{
+    } else {
         ajouterMessageAlerte("La suppression du compte a échoué.<br>Contacter l'administrateur.", "rouge");
         header('location:' . URL . "admin/gestion_droits");
     }
+}
+
+function adminVisuListes()
+{
+
+    $datas = getUserInformation($_SESSION['profil']['login']);
+    $datasList = getToDoListUser($_SESSION['profil']['login']);
+    $typeFromToDoList = getTypeFromToDoList($_SESSION['profil']['login']);
+    $liste_utilisateurs = getAllUsersInformation();
+
+
+    $data_page = [
+        "page_description" => "Description accueil",
+        "page_title" => "Visu Listes",
+        "view" => "views/pages/administrateur/adminVisuListes.view.php",
+        "template" => "views/commons/template.php",
+        "utilisateur" => $datas,
+        "listUser" => $datasList,
+        "typeFromToDoList" => $typeFromToDoList,
+        "liste_utilisateurs" =>$liste_utilisateurs,
+        "js" => ["profil.js", "todo.js"]
+
+    ];
+    genererPage($data_page);
 }

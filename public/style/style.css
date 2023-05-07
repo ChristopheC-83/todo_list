@@ -588,53 +588,62 @@ footer a {
   border: 1px solid #f1f1f1;
 }
 
-.listeContainer {
+.listeContainer, .adminListeContainer {
   position: relative;
 }
-.listeContainer .menuDeroulantListe {
+.listeContainer .menuDeroulantListe, .adminListeContainer .menuDeroulantListe {
   display: block;
   margin: 15px auto;
   text-align: center;
 }
-.listeContainer table {
+.listeContainer table, .adminListeContainer table {
   width: 90%;
   max-width: 1500px;
   margin: 0 auto;
 }
-.listeContainer tr,
+.listeContainer tr, .adminListeContainer tr,
 .listeContainer td,
-.listeContainer th {
+.adminListeContainer td,
+.listeContainer th,
+.adminListeContainer th {
   border: 1px solid #f1f1f1;
   text-align: center;
 }
-.listeContainer tr .elementFait,
+.listeContainer tr .elementFait, .adminListeContainer tr .elementFait,
 .listeContainer td .elementFait,
-.listeContainer th .elementFait {
+.adminListeContainer td .elementFait,
+.listeContainer th .elementFait,
+.adminListeContainer th .elementFait {
   color: #eee;
   text-decoration: line-through;
   text-align: right;
   padding: 0 15px;
 }
-.listeContainer tr .elementAFaire,
+.listeContainer tr .elementAFaire, .adminListeContainer tr .elementAFaire,
 .listeContainer td .elementAFaire,
-.listeContainer th .elementAFaire {
+.adminListeContainer td .elementAFaire,
+.listeContainer th .elementAFaire,
+.adminListeContainer th .elementAFaire {
   color: white;
   text-align: left;
   padding: 0 15px;
 }
-.listeContainer th:nth-child(1),
+.listeContainer th:nth-child(1), .adminListeContainer th:nth-child(1),
 .listeContainer th:nth-child(3),
+.adminListeContainer th:nth-child(3),
 .listeContainer th:nth-child(4),
-.listeContainer th:nth-child(5) {
+.adminListeContainer th:nth-child(4),
+.listeContainer th:nth-child(5),
+.adminListeContainer th:nth-child(5) {
   width: 10%;
 }
-.listeContainer th {
+.listeContainer th, .adminListeContainer th {
   padding: 10px;
 }
-.listeContainer td {
+.listeContainer td, .adminListeContainer td {
   padding: 7px;
 }
-.listeContainer button {
+.listeContainer button, .adminListeContainer button {
   background-color: transparent;
   color: #f1f1f1;
   border: none;
@@ -708,6 +717,21 @@ footer a {
   color: crimson;
   margin-top: 30px;
   cursor: pointer;
+}
+
+.adminListeContainer th:nth-child(2),
+.adminListeContainer th:nth-child(5),
+.adminListeContainer th:nth-child(6) {
+  width: 6%;
+}
+.adminListeContainer th:nth-child(1) {
+  width: 10%;
+}
+.adminListeContainer th:nth-child(4) {
+  width: 12%;
+}
+.adminListeContainer th:nth-child(3) {
+  width: 60%;
 }
 
 body {
