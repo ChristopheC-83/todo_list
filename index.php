@@ -172,6 +172,12 @@ try {
                     case "adminCheckedElementListe":
                         validation_adminCheckedElementListe($_POST['id'], $_POST['checkbox'], $_POST['login']);
                         break;
+                    case "adminModifierElementListe":
+                        validation_adminModifierElementListe($_POST['id'], $_POST['a_faire'],$_POST['type'], $_POST['login']);
+                        break;
+                    case "adminSupprimerElementListe":
+                        validation_adminSupprimerElementListe($_POST['id'], $_POST['login']);
+                        break;
 
                     default:
                         throw new Exception("La page demandée n'existe pas.");

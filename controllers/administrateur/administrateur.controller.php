@@ -62,7 +62,6 @@ function adminVisuListes()
 {
 
     $datas = getUserInformation($_SESSION['profil']['login']);
-    $datasList = getToDoListUser($_SESSION['profil']['login']);
     $typeFromToDoList = getTypeFromToDoList($_SESSION['profil']['login']);
     $liste_utilisateurs = getAllUsersInformation();
 
@@ -73,7 +72,6 @@ function adminVisuListes()
         "view" => "views/pages/administrateur/adminVisuListes.view.php",
         "template" => "views/commons/template.php",
         "utilisateur" => $datas,
-        "listUser" => $datasList,
         "typeFromToDoList" => $typeFromToDoList,
         "liste_utilisateurs" =>$liste_utilisateurs,
         "js" => ["profil.js", "todo.js"]

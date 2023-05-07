@@ -1,7 +1,13 @@
 <div class="animTitres visuListes">
 
-    <!-- <?=afficherTableau($liste_utilisateurs)?>
-    <?=afficherTableau($listUser)?> -->
+    <!-- <?php
+            foreach ($liste_utilisateurs as $utilisateur) {
+                $datasList = getToDoListUser($utilisateur['login']);
+                foreach ($datasList as $elementListe) {
+                    afficherTableau($elementListe);
+                }
+            }
+            ?> -->
 
     <div class="adminListeContainer">
         <table>
@@ -18,7 +24,7 @@
 
                 <?php
                 foreach ($liste_utilisateurs as $utilisateur) : ?>
-                    <?php foreach ($listUser as $elementListe) : ?>
+                    <?php foreach (getToDoListUser($utilisateur['login']) as $elementListe) : ?>
                         <?php if (!empty($_POST['liste_choisie'])) : ?>
                             <?php if ($elementListe['type'] === $_POST['liste_choisie']) : ?>
                                 <?php require "./views/commons/liste_affichee_admin.php" ?>

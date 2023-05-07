@@ -13,3 +13,18 @@ function validation_adminCheckedElementListe($id, $fait, $login)
     }
     header('location:' . URL . "admin/visu_listes");
 }
+function validation_adminModifierElementListe($id, $a_faire,$type, $login)
+{   
+    if (!adminBdModifierElementListe($id, $type, $a_faire,$login)) {
+        ajouterMessageAlerte("Echec de l'action", "rouge");
+    }
+    header('location:' . URL . "admin/visu_listes");
+}
+
+function validation_adminSupprimerElementListe($id, $login)
+{
+    if (!adminBdSuppressionElementListe($id, $login)) {
+        ajouterMessageAlerte("Echec de la suppression", "rouge");
+    }
+    header('location:' . URL . "admin/visu_listes");
+}
