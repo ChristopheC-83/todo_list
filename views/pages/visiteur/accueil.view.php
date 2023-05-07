@@ -1,15 +1,20 @@
 <div class="animTitres listeContainer">
 
     <?php if (!estConnecte()) :  ?>
-        <h2>Je m'enregistre si ce n'est pas déjà fait => logo enregistrement</h2>
-        <h2>Je me connecte => logo connexion</h2>
+        <h2>Je m'enregistre si ce n'est pas déjà fait =>
+            <a href="<?= URL ?>login"><i class="fa-solid fa-file-circle-plus"></i></a>
+        </h2>
+        <h2>Je me connecte =>
+            <a href="<?= URL ?>login"><i class="fa-solid fa-right-to-bracket"></i></a>
+        </h2>
         <h2>J'organise la liste des choses à faire ! => explosion smiley</h2>
 
     <?php else : ?>
 
         <div class="iconeAjouterElementListe"><i class="fa-solid fa-circle-plus"></i></div>
         <div class="overlayAjouterElementListeModale dnone">
-        <i class="fa-regular fa-circle-xmark fermerModale"></i></div>
+            <i class="fa-regular fa-circle-xmark fermerModale"></i>
+        </div>
 
         <div class="ajouterElementListe dnone" id="ajouterElementListe">
             <h3>Ajouter un élément dans votre ToDoList</h3>
@@ -61,7 +66,7 @@
         <?php endforeach ?>
 
         </table>
-        
+
         <div class="annulerElementsFaits"><a href="compte/supprimerCoche"><i class="fa-solid fa-circle-xmark"></i></a></div>
     <?php endif ?>
     <div class="overlayElementListeModale dnone">

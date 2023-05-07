@@ -6,7 +6,7 @@
     <div class="card_profil">
         <div class="imgProfil">
             <img src="<?= URL ?>/public/assets/images/<?= $utilisateur['image'] ?>" alt="photo de profil">
-
+         
             <p>Changer votre image de profil :</p><br>
             <form action="<?= URL ?>compte/validation_modifImage" enctype="multipart/form-data" method="post">
                 <label for="image">Par une image perso

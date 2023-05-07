@@ -33,6 +33,7 @@ function profil()
 {
     $datas = getUserInformation($_SESSION['profil']['login']);
     $_SESSION['profil']['role'] = $datas['role'];
+    $_SESSION['profil']['image']=  $datas['image']; 
 
     $data_page = [
         "page_description" => "Description Utilisateur",

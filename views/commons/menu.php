@@ -55,9 +55,9 @@
         <?php if (estConnecte()) :  ?>
             <a href="<?= URL ?>compte/profil">
                 <div class="profil_navbar">
-                    <img src="<?= URL ?>/public/assets/images/<?= $utilisateur['image'] ?>" alt="" class="img_profil_navbar">
-                    <p>Profil</p>
+                    <img src="<?= URL ?>/public/assets/images/<?= $_SESSION['profil']['image']?>" alt="" class="img_profil_navbar">
                 </div>
+                <p>profil</p>
             </a>
         <?php else : ?>
             <div class="profil_navbar">

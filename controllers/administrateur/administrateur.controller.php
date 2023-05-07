@@ -9,6 +9,7 @@ require_once("./models/administrateur/administrateur.model.php");
 function droits()
 {
     $utilisateurs = getAllUsersInformation();
+    $datas = getUserInformation($_SESSION['profil']['login']);
 
     $data_page = [
         "page_description" => "Gestion des droits des utilisateurs",
@@ -17,6 +18,7 @@ function droits()
         "template" => "views/commons/template.php",
         "js" => ["admin.js"],
         "utilisateurs" => $utilisateurs,
+        "utilisateur" => $datas,
 
     ];
     genererPage($data_page);

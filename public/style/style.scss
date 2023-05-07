@@ -3,6 +3,7 @@
 @import "libs/mixins";
 @import "libs/placeholders";
 @import "libs/formulaires";
+@import "libs/utilitaires";
 @import "communs/header_menu";
 @import "communs/footer";
 @import "communs/titres";
@@ -25,5 +26,9 @@ body {
   // border-top: 1px solid #000;
   display: flex;
   flex-direction: column;
+}
+
+.dnone{
+  display: none;
 }
 
