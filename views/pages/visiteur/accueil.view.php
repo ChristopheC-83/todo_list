@@ -1,13 +1,13 @@
 <div class="animTitres listeContainer">
 
     <?php if (!estConnecte()) :  ?>
-        <h2>Je m'enregistre si ce n'est pas déjà fait =>
+        <h2 class="titreAcueil">Je m'enregistre si ce n'est pas déjà fait =>
             <a href="<?= URL ?>login"><i class="fa-solid fa-file-circle-plus"></i></a>
         </h2>
-        <h2>Je me connecte =>
+        <h2 class="titreAcueil">Je me connecte =>
             <a href="<?= URL ?>login"><i class="fa-solid fa-right-to-bracket"></i></a>
         </h2>
-        <h2>J'organise la liste des choses à faire ! => explosion smiley</h2>
+        <h2 class="titreAcueil">J'organise la liste des choses à faire ! <i class="fa-solid fa-thumbs-up"></i></h2>
 
     <?php else : ?>
 

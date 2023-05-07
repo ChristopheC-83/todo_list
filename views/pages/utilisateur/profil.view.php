@@ -1,7 +1,6 @@
 <div class="animTitres profilContainer">
 
     <h1><?= $utilisateur['login'] ?> : votre profil</h1>
-    <h2>Profil et modifications</h2>
 
     <div class="card_profil">
         <div class="imgProfil">

@@ -149,7 +149,7 @@ function bdCreerTableToDo($login){
     $req="
     CREATE TABLE $tableName (    
     id INT(11) AUTO_INCREMENT PRIMARY KEY,
-    à_faire VARCHAR(255) NOT NULL,
+    a_faire VARCHAR(255) NOT NULL,
     fait int(255) NOT NULL,
     type VARCHAR(255) NOT NULL
     )";
